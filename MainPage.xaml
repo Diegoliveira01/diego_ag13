@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.MainPage"
+             BackgroundColor="White">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20">
+
+            <!-- Logo e título do hotel -->
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <Image Source="flor.png" WidthRequest="40" HeightRequest="40" />
+                <Label Text="Hotel Flores da Primavera"
+                       FontSize="24"
+                       FontAttributes="Bold"
+                       TextColor="DarkRed"
+                       VerticalOptions="Center" />
+            </HorizontalStackLayout>
+
+            <!-- Título principal -->
+            <Label Text="Cálculo de Diária"
+                   FontSize="26"
+                   FontAttributes="Bold"
+                   TextColor="DarkRed"
+                   HorizontalOptions="Center" />
+
+            <!-- Moldura 1: Adultos, Crianças, Suíte -->
+            <Frame BackgroundColor="White" CornerRadius="10" Padding="15" HasShadow="True">
+                <VerticalStackLayout Spacing="15">
+
+                    <!-- Adultos -->
+                    <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                        <Label Text="Adultos" TextColor="DarkRed" FontSize="16" VerticalOptions="Center"/>
+                        <Button Text="-" BackgroundColor="DarkRed" TextColor="White" Clicked="OnRemoverAdulto" />
+                        <Entry x:Name="adultosEntry"
+                               Text="0"
+                               WidthRequest="60"
+                               Keyboard="Numeric"
+                               TextColor="Black"
+                               BackgroundColor="White"
+                               VerticalOptions="Center" />
+                        <Button Text="+" BackgroundColor="DarkRed" TextColor="White" Clicked="OnAdicionarAdulto" />
+                    </HorizontalStackLayout>
+
+                    <!-- Crianças -->
+                    <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                        <Label Text="Crianças" TextColor="DarkRed" FontSize="16" VerticalOptions="Center"/>
+                        <Button Text="-" BackgroundColor="DarkRed" TextColor="White" Clicked="OnRemoverCrianca" />
+                        <Entry x:Name="criancasEntry"
+                               Text="0"
+                               WidthRequest="60"
+                               Keyboard="Numeric"
+                               TextColor="Black"
+                               BackgroundColor="White"
+                               VerticalOptions="Center" />
+                        <Button Text="+" BackgroundColor="DarkRed" TextColor="White" Clicked="OnAdicionarCrianca" />
+                    </HorizontalStackLayout>
+
+                    <!-- Suíte -->
+                    <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                        <Label Text="Escolha sua Suite" TextColor="DarkRed" FontSize="16" VerticalOptions="Center"/>
+                        <Picker x:Name="suitePicker"
+                                BackgroundColor="White"
+                                TextColor="White"
+                                WidthRequest="200" />
+                    </HorizontalStackLayout>
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Moldura 2: Período, Check-in, Check-out -->
+            <Frame BackgroundColor="White" CornerRadius="10" Padding="15" HasShadow="True">
+                <VerticalStackLayout Spacing="10">
+
+                    <Label Text="Período de Estadia" TextColor="DarkRed" FontSize="16"/>
+
+                    <!-- Check-in -->
+                    <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                        <Label Text="Check-in" TextColor="DarkRed" FontSize="14" VerticalOptions="Center" WidthRequest="80"/>
+                        <Entry Placeholder="dd/mm/aaaa"
+                               BackgroundColor="White"
+                               TextColor="Black"
+                               WidthRequest="150" />
+                    </HorizontalStackLayout>
+
+                    <!-- Check-out -->
+                    <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                        <Label Text="Check-out" TextColor="DarkRed" FontSize="14" VerticalOptions="Center" WidthRequest="80"/>
+                        <Entry Placeholder="dd/mm/aaaa"
+                               BackgroundColor="White"
+                               TextColor="Black"
+                               WidthRequest="150" />
+                    </HorizontalStackLayout>
+
+                    <!-- Mensagem de erro -->
+                    <Label Text="Selecione um período válido."
+                           TextColor="Red"
+                           FontAttributes="Italic" />
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Botões finais -->
+            <HorizontalStackLayout Spacing="20" HorizontalOptions="Center">
+                <Button Text="Sobre"
+                        BackgroundColor="DarkRed"
+                        TextColor="White"
+                        Clicked="OnSobreClicked" />
+
+                <Button Text="Avançar"
+                        BackgroundColor="DarkRed"
+                        TextColor="White" />
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
